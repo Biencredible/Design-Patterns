@@ -2,3 +2,6 @@
 *.obj
 *.pdb
 *.vsdx
+Structural Design Patterns/Adapter/FlightSimulator/.vs/
+Structural Design Patterns/Adapter/FlightSimulator/FlightSimulator.vcxproj.user
+*.filters
