@@ -8,7 +8,30 @@ Adapter composes adaptee and calls its method through a reference/pointer
 Inerhitance:
 Adapter inherits from the adaptee and calls the methods directly
 
+Object Adapter
+Pros:
+- One Adapter can work with multiple classes (even subclasses of adaptee).
+- Can always adapt to an existing class.
 
+Cons:
+- Cannot override adaptee's behavior.
+- Methods are invoked through a pointer.
+
+
+Class Adapter
+Pros:
+- Method calls are direct as they're inherited (no pointer indirection)
+- can override adaptee's behavior.
+
+Cons:
+- Won't work if the adaptee is final or sealed.
+- Use multiple class inheritance (may not be possible in all languages).
+- Won't work with subclasses of adaptees.
+
+When to use:
+- You want to use an existing class, and it has an incompatible interface.
+- You need to use classes from existing hierarchy, but they've incompatible interface.
+- You need to reuse an existing class with incompatible interface, but want to modify some behavior.
 
 
 
