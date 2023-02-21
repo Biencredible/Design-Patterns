@@ -6,3 +6,8 @@ Structural Design Patterns/Adapter/FlightSimulator/.vs/
 Structural Design Patterns/Adapter/FlightSimulator/FlightSimulator.vcxproj.user
 *.filters
 Structural Design Patterns/Adapter/FlightSimulator/Debug/
+*.user
+Structural Design Patterns/Adapter/Abstract/.vs/
+Structural Design Patterns/Adapter/Abstract/Debug/Abstract.exe
+Structural Design Patterns/Adapter/Abstract/Debug/
+Structural Design Patterns/Adapter/FlightSimulatorCA/Debug/

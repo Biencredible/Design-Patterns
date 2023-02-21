@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{132BDF61-599F-46AF-9680-04C750B65C9C}</ProjectGuid>
+    <ProjectGuid>{1D6F6EC4-7DD7-4778-9F60-91F1CF6882F5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>FlightSimulator</RootNamespace>
+    <RootNamespace>Abstract</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,14 +72,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);"../../FlightSimulator;"</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);"../../FlightSimulator;"</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -153,19 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AccelAdapter.cpp" />
-    <ClCompile Include="Accelerometer.cpp" />
-    <ClCompile Include="FlightSimulator.cpp" />
-    <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="Abstract.cpp" />
+    <ClCompile Include="Adaptee.cpp" />
+    <ClCompile Include="AdapterComposition.cpp" />
+    <ClCompile Include="AdapterInheritance.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AccelAdapter.h" />
-    <ClInclude Include="Accelerometer.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Keyboard.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="Adaptee.h" />
+    <ClInclude Include="AdapterComposition.h" />
+    <ClInclude Include="AdapterInheritance.h" />
+    <ClInclude Include="Target.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
