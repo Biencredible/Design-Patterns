@@ -1,0 +1,15 @@
+Convert the interface of a class into another interface clients expect. Adapter lets class work together that couldn't
+otherwise because of incompatible interfaces.
+
+Implement through Composition or Inheritance
+Composition:
+Adapter composes adaptee and calls its method through a reference/pointer
+
+Inerhitance:
+Adapter inherits from the adaptee and calls the methods directly
+
+
+
+
+
+
