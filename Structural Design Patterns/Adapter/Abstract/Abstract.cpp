@@ -3,13 +3,16 @@
 
 #include <iostream>
 
-#include "Target.h"
+#include "ClientInterface.h"
 #include "AdapterComposition.h"
 #include "AdapterInheritance.h"
 
-void Client(Target* pTarget)
+/* Client is a class that contains the existing business logic of the program.
+@param pInterface[in]   - Interface to request something from.
+*/
+void Client(ClientInterface* pInterface)
 {
-    pTarget->Request();
+    pInterface->Request();
 }
 
 int main() 

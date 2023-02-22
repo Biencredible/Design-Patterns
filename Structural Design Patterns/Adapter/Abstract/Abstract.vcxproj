@@ -160,7 +160,7 @@
     <ClInclude Include="Adaptee.h" />
     <ClInclude Include="AdapterComposition.h" />
     <ClInclude Include="AdapterInheritance.h" />
-    <ClInclude Include="Target.h" />
+    <ClInclude Include="ClientInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
