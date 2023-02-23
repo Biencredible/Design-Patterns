@@ -68,6 +68,20 @@ BRIDGE is usually designed uo-front, letting you develop parts of an application
 other hand ADAPTER is commonly used with an existing app to make some otherwise-incompatible classes work together 
 nicely.
 
+ADAPTER changes the interface of an existing object, while DECORATOR enhances an object without changing its interface.  
+In addition, DECORATOR supports recursive composition, which  isnt possible when you use ADAPTER.
+
+ADAPTER provides a diffrent interface to the wrapped object, PROXY provides it with the same interface, and DECORATOR 
+provides it with an enhanced interface.
+
+FACADE defines a new interface for existing objects, whereas ADAPTER trie sto make the existing interface usable. 
+ADAPTER usually wraps just one object, while FACADE works with an entire subsystem of objects.
+
+BRIDGE, STATE, STRATEGY (and to some degree ADAPTER) have similar structures. Indeed all of these patterns ate based on 
+composition, which is delegating work to other objects. However, they all solve different problmes. A pattern isn#t just 
+a recipe for structuring your code in aspecific way. It can also communicate to other developers the problem the pattern
+solves.
+
 
 
 
