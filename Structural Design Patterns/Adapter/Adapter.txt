@@ -18,6 +18,14 @@ Adapter composes adaptee and calls its method through a reference/pointer
 Inerhitance:
 Adapter inherits from the adaptee and calls the methods directly
 
+General Pros:
+- Sinngle Responsibility. The interface or data conversion can be separated from the business logic.
+- Open/Closed Principle. New types can be introduced into the program without breaking existing client code.
+
+General Cons:
+- Overall complexity increases, because new interfaces and classes need to be introduced. Sometimes it's simpler to 
+    change the adaptee to match the rest of the code.
+
 Object Adapter
 Pros:
 - One Adapter can work with multiple classes (even subclasses of adaptee).
@@ -55,6 +63,10 @@ How to implement:
 6. Clients should use the adapter via the client interface. This will let you change or extend the adapters without 
     affecting the client code.
 
+Relations with other patterns
+BRIDGE is usually designed uo-front, letting you develop parts of an application independently of each other. On the 
+other hand ADAPTER is commonly used with an existing app to make some otherwise-incompatible classes work together 
+nicely.
 
 
 
