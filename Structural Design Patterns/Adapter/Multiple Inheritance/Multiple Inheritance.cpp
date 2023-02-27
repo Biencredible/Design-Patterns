@@ -1,4 +1,4 @@
-// Conceptual Example.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Multiple Inheritance.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -19,8 +19,8 @@ public:
 };
 
 /**
- *The Adaptee contains some usefull behavior, but its interface is incompatible with the existing 
- *client code. THe Adaptee needs some adaptation before the client code can use it.
+*The Adaptee contains some usefull behavior, but its interface is incompatible with the existing 
+*client code. THe Adaptee needs some adaptation before the client code can use it.
 */
 class Adaptee
 {
@@ -32,25 +32,22 @@ public:
 };
 
 /**
- *The Adapter makes the Adaptee's interface compatible with the Target's interface.
+*The Adapter makes the Adaptee's interface compatible with the Target's interface.
 */
-class Adapter : public Target
+class Adapter : public Target, public Adaptee
 {
-private:
-    Adaptee *adaptee_;
 public:
-    Adapter (Adaptee* adaptee) : adaptee_(adaptee)
-    {}
+    Adapter () {}
     std::string Request() const override
     {
-        std::string to_reverse = adaptee_->SpecificRequest();
+        std::string to_reverse = SpecificRequest();
         std::reverse(to_reverse.begin(), to_reverse.end());
         return "Adapter: (TRANSLATED) " + to_reverse;
     }
 };
 
 /**
- *The client code supports all classes that follow the Target interface.
+*The client code supports all classes that follow the Target interface.
 */
 void ClientCode(Target* target)
 {
@@ -68,7 +65,7 @@ int main()
     std::cout << "Adaptee: " << adaptee->SpecificRequest();
     std::cout << "\n\n";
     std::cout << "Client: But I can work with it via the Adapter:\n";
-    Adapter* adapter = new Adapter(adaptee);
+    Adapter* adapter = new Adapter();
     ClientCode(adapter);
     std::cout << "\n";
 

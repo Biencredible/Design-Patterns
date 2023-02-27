@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.2092
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Conceptual Example", "Conceptual Example.vcxproj", "{A35E7F3B-71AA-4323-B15E-A9AD1374C415}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Multiple Inheritance", "..\Multiple Inheritance\Multiple Inheritance.vcxproj", "{923E4636-A316-419E-9C22-71C1CD2BDA1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{A35E7F3B-71AA-4323-B15E-A9AD1374C415}.Release|x64.Build.0 = Release|x64
 		{A35E7F3B-71AA-4323-B15E-A9AD1374C415}.Release|x86.ActiveCfg = Release|Win32
 		{A35E7F3B-71AA-4323-B15E-A9AD1374C415}.Release|x86.Build.0 = Release|Win32
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Debug|x64.ActiveCfg = Debug|x64
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Debug|x64.Build.0 = Debug|x64
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Debug|x86.ActiveCfg = Debug|Win32
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Debug|x86.Build.0 = Debug|Win32
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Release|x64.ActiveCfg = Release|x64
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Release|x64.Build.0 = Release|x64
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Release|x86.ActiveCfg = Release|Win32
+		{923E4636-A316-419E-9C22-71C1CD2BDA1B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
