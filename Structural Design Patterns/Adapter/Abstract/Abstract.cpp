@@ -10,7 +10,7 @@
 /* Client is a class that contains the existing business logic of the program.
 @param pInterface[in]   - Interface to request something from.
 */
-void Client(ClientInterface* pInterface)
+void Client(Target* pInterface)
 {
     pInterface->Request();
 }

@@ -1,13 +1,19 @@
+________________________________________________________________________________________________________________________
 Intent:
+________________________________________________________________________________________________________________________
 Convert the interface of a class into another interface clients expect. Adapter lets class work together that couldn't
 otherwise because of incompatible interfaces.
 
+________________________________________________________________________________________________________________________
 Example Problem:
+________________________________________________________________________________________________________________________
 Stock market monitoring app downloads sources in XML format and displays them as diagrams and charts. Improvements
 are possible by sing a 3rd-party analytics library, but that provides its data in JSON format. Changing the 3rd-party
 library might not wirk, because you might break the existing code or you might not have access.
 
+________________________________________________________________________________________________________________________
 Solution: 
+________________________________________________________________________________________________________________________
 Write an Adapter, that converts JSON files into XML files and vice versa, to make communication between your app and 
 the 3rd party library possible.
 
@@ -18,6 +24,17 @@ Adapter composes adaptee and calls its method through a reference/pointer
 Inerhitance:
 Adapter inherits from the adaptee and calls the methods directly
 
+________________________________________________________________________________________________________________________
+Components:
+________________________________________________________________________________________________________________________
+Target: The interface the client is using.
+Client: Works with objects, which interfaces are the same as target.
+Adaptee: Class with incompatible interface
+Adapter: Adapts interface of adaptee to the interface of target.
+
+________________________________________________________________________________________________________________________
+Pros & Cons
+________________________________________________________________________________________________________________________
 General Pros:
 - Sinngle Responsibility. The interface or data conversion can be separated from the business logic.
 - Open/Closed Principle. New types can be introduced into the program without breaking existing client code.
@@ -45,14 +62,18 @@ Cons:
 - Use multiple class inheritance (may not be possible in all languages).
 - Won't work with subclasses of adaptees.
 
+________________________________________________________________________________________________________________________
 Applicability(When to use):
+________________________________________________________________________________________________________________________
 - You want to use an existing class, and its interface isn't compatible with the rest of your code. The Adapter pattern
 lets you create a middle-layer class that serves as a translator between your code and a 3rd-party class with an 
 incompatible interface.
 - You need to use classes from existing hierarchy, but they've incompatible interface.
 - You need to reuse an existing class with incompatible interface, but want to modify some behavior.
 
+________________________________________________________________________________________________________________________
 How to implement:
+________________________________________________________________________________________________________________________
 1. Identify the two classes with incompatible interfaces. A Client class that wants to use a 3rd-party class.
 2. Declare the client interface and describe how clients communicate with the Adaptee.
 3. Create the ADapter class and make it follow ht client interface. Leave all Methods empty for now.
@@ -63,7 +84,9 @@ How to implement:
 6. Clients should use the adapter via the client interface. This will let you change or extend the adapters without 
     affecting the client code.
 
+________________________________________________________________________________________________________________________
 Relations with other patterns
+________________________________________________________________________________________________________________________
 BRIDGE is usually designed uo-front, letting you develop parts of an application independently of each other. On the 
 other hand ADAPTER is commonly used with an existing app to make some otherwise-incompatible classes work together 
 nicely.

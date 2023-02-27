@@ -7,7 +7,7 @@ The Adapter is aclass that's able to work with both the client and the Adaptee: 
 while wrapping the service object. THe adapter receives calls from the client via the adapter interface and translates 
 calls to the wrapped service object in a format it can understand.
 */
-class AdapterComposition : public ClientInterface
+class AdapterComposition : public Target
 {
     Adaptee* adaptee;
 public:

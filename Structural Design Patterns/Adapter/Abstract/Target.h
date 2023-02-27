@@ -3,9 +3,9 @@
 /**
 The Client interface describes a protocol that other classes must follow to be able to collaborate with the client code.
 */
-class ClientInterface
+class Target
 {
 public:
     virtual void Request() = 0;
-    virtual ~ClientInterface() = default;
+    virtual ~Target() = default;
 };
