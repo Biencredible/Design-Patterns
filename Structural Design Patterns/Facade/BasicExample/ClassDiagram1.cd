@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="A">
+    <Position X="2" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>A.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>B.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAgAAQAAAQ=</HashCode>
+      <FileName>Client.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="facade" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Facade">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACABQAAAACEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Facade.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="A_" />
+      <Field Name="B_" />
+      <Field Name="C_" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
