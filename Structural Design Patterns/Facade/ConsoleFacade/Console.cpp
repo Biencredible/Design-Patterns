@@ -16,16 +16,16 @@ WORD Console::GetColor(Color color)
 Console::Console()
 {
     m_Std = GetStdHandle(STD_OUTPUT_HANDLE);
-    if(!GetConsoleScreenBufferInfo(m_Std, &m_consoleBufferInfo))
-    {
-        throw std::runtime_error{ "Error while retrieving console information" };
-    }
+    //if(!GetConsoleScreenBufferInfo(m_Std, &m_consoleBufferInfo))
+    //{
+    //    throw std::runtime_error{ "Error while retrieving console information" };
+    //}
 }
 
-Console::~Console()
-{
-    SetConsoleTextAttribute(m_Std, m_consoleBufferInfo.wAttributes);
-}
+//Console::~Console()
+//{
+//    SetConsoleTextAttribute(m_Std, m_consoleBufferInfo.wAttributes);
+//}
 
 void Console::Write(const std::string& text, Color color)
 {

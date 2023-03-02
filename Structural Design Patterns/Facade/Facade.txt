@@ -19,11 +19,35 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 Pros & Cons
 ________________________________________________________________________________________________________________________
+Pros:
+- Facade isolates the clients from components with complex interface
+- reduces the number of objectrs the clients interact with.
+- Leads to weak coupling.
+- underlying components can change without impacting the clients
+- reduces compilation dependencies in large systems
+- Facades do not hide the underlying classes of the subsystem
+- Clients can still use the classes if they need to
+- Provides an object oriented interface to
+    - low-level operating system functions or APIs
+    - data structures, thereby reducing programming errors
 
+Cons:
+- Overuse leads to too many layers
+- Performance of the system may degrade
 ________________________________________________________________________________________________________________________
 Applicability(When to use):
 ________________________________________________________________________________________________________________________
-
+- You want to provide a simple interface to a complex system 
+    - this could be a default view for most clients
+    - Other clients that need customization can use the underlying classes directly
+A system has evolved and gets more complex
+    - early users might want to retain their views of the system
+Your Application depends on low-level OS APIs
+    - You want to avoid coupling with a specific OS
+    - ypu want to provide an object-oriented wrapper
+Team members with different level of experience use the system
+    - your might want to provide a novice or power user interfaces
+Too many dependencies between clients and the implementation classes of a subsystem
 ________________________________________________________________________________________________________________________
 How to implement:
 ________________________________________________________________________________________________________________________
