@@ -1,17 +1,19 @@
 ________________________________________________________________________________________________________________________
 Intent:
 ________________________________________________________________________________________________________________________
-Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher level interface that makes 
-the subsystm easier to use.
+Provide a unified or simplified interface to a set of interfaces in a subsystem. Facade defines a higher level interface 
+that makes the subsystm easier to use.
 
 ________________________________________________________________________________________________________________________
 Example Problem:
 ________________________________________________________________________________________________________________________
-
+Code must work with a broad set of  objects. Those objects need to be initialized, dependencies need to be kept track
+of, methosds must be called in the correct order. Code becomes tightly coupled to the implementation of thrid party 
+classes and hard to comprehend and maintain.
 ________________________________________________________________________________________________________________________
 Solution: 
 ________________________________________________________________________________________________________________________
-
+Facade provides a simple interface to a complex subsystem. Might provide limited funcionality.
 ________________________________________________________________________________________________________________________
 Components:
 ________________________________________________________________________________________________________________________
