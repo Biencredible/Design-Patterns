@@ -1,0 +1,26 @@
+In this example, the Facade pattern simplifies interaction with a complex video conversion framework.
+Instead of making your code work with dozens of the framework classes directly, you create a facade class which 
+encapsulates that functionality and hides it from the rest of the code. This structure also helps you to minimize the 
+effort  of upgrading to future versions of the framework or replacinng it with another one. The only thing you'd need to 
+change in your app would be the implementation of the facade's methods.
+
+// These are some classes of a complex 3rd-party video conversion framework. We don't control that code, therefore
+// can't simplify it.
+
+class VideoFile
+// ...
+
+class OggCompressionCodec
+// ...
+
+class MPEG4CompressionCodec
+// ...
+
+Class CodecFactory
+// ...
+
+Class BitrateReader
+// ...
+
+Class AudioMixer
+// ...
