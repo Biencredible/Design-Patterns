@@ -36,6 +36,7 @@ Pros:
 Cons:
 - Overuse leads to too many layers
 - Performance of the system may degrade
+- Can become a god object
 ________________________________________________________________________________________________________________________
 Applicability(When to use):
 ________________________________________________________________________________________________________________________
@@ -66,3 +67,17 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 Relations with other patterns
 ________________________________________________________________________________________________________________________
+- Facade defines a new interface for existing objects, whereas Adapter tries to make the existing interface usable. 
+    Adapter usually wraps just one object, while Facade works with an entire subsystem of objects.
+- Abstract Factory can serve as an alternative Facade when you only want to hide the way the subsystem objects are 
+    created the client code.
+- Flyweight shows how to make lots of little objects, wheras Facade shows how to make a single object that represents
+    an entire subsystem.
+- Facade and Mediator have similar jobs: they try to organize collaboration between lots of tightly coupled classes.
+    - Facade defines a simplified interface to a subsystem of objects, but it doesn't introduce any new functionality.
+        The subsystem itself is unaware of the facade. Objects within the subsystem can communicate directly.
+    - Mediator centralizes communication between components of the system. The components only know about the Mediator
+        object and don't communicate directly.
+- A Facade class can often be transformed into a  Singleton since a single facade object is sufficient in most cases.
+- Facade is similar to Proxy in that both buffer a complex entity and initialize it on its own. Unlike Facade, Proxy has
+    the same interface as its servicce object, which makes them interchangable.
