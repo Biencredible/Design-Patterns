@@ -24,3 +24,26 @@ Class BitrateReader
 
 Class AudioMixer
 // ...
+
+// We create a facade class to hide the framework's complexity behind a simple interface. It's a trade-off between
+// functionality and simplicity.
+
+class VideoConverter is
+    method convert(filename, format):File is
+        file = new VideoFile(filename)
+        sourceCodec = (new CodecFactory).extract(file)
+        if(format == "mp4")
+            destinationCodec = new MPEG4CompressionCOdec()
+        else
+            destinationCodec = new OggCompressionCOdec()
+        buffer = BitrateReader.. convert(buffer, destinationCodec)
+        result = (new AudioMixer()).fix(result)
+        return new File(result)
+
+// Applocation classes don't depend on a billion classes provided by the complex framework. ALso, if you decide to
+// switch frameworks, you only need to rewrite the facade class.
+class Application is
+    method main() is
+        convertor = new VideoConverter()
+        mp4 = convertor.convert("funnny-cats-video.ogg", "mp4")
+        mp4.save()

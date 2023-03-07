@@ -50,10 +50,19 @@ Your Application depends on low-level OS APIs
 Team members with different level of experience use the system
     - your might want to provide a novice or power user interfaces
 Too many dependencies between clients and the implementation classes of a subsystem
+When you want to structure a subsystem into layers.
 ________________________________________________________________________________________________________________________
 How to implement:
 ________________________________________________________________________________________________________________________
-
+1. Check whether it is possible to provide a simpler interface than what an existing subsystem already provides. 
+    You're on the right track if this interface makes the client code independent from many of the subsystem's classes.
+2. Declare and implement this interface in a new facade class. The facade should redirect the calls from client code to 
+    appropriate objects of the subsystem. The facade should be responsible for initializing the subsystem and managing 
+    its further life cycle unless the client code already does this.
+3. To get the full benefit from the pattern, make all the client code communicate with the subsystem only via the 
+    facade. Now the client code is protected from man changes in the dubsystem code. For example, when a subssystem gets 
+    upgraded to a new version, you will only need to modify the code in the facade.
+4. If the facade becomes too big, consider extracting part of its behavior to a new, refined facade class.
 ________________________________________________________________________________________________________________________
 Relations with other patterns
 ________________________________________________________________________________________________________________________
