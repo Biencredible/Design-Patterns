@@ -152,6 +152,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Compiler.cpp" />
+    <ClCompile Include="ExpressionNode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Codegenerator.h" />
+    <ClInclude Include="Compiler.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="ProgramNode.h" />
+    <ClInclude Include="ProgramNodeBuilder.h" />
+    <ClInclude Include="Scanner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

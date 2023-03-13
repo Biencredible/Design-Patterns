@@ -1,3 +1,7 @@
+
+/**
+* Facade for the compiler subsystem.
+*/
 class Compiler
 {
 public:
