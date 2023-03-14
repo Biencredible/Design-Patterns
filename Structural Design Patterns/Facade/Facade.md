@@ -1,26 +1,17 @@
-________________________________________________________________________________________________________________________
 # Intent:
-________________________________________________________________________________________________________________________
 Provide a unified or simplified interface to a set of interfaces in a subsystem. Facade defines a higher level interface 
 that makes the subsystm easier to use.
 
-________________________________________________________________________________________________________________________
 # Example Problem:
-________________________________________________________________________________________________________________________
 Code must work with a broad set of  objects. Those objects need to be initialized, dependencies need to be kept track
 of, methosds must be called in the correct order. Code becomes tightly coupled to the implementation of thrid party 
 classes and hard to comprehend and maintain.
-________________________________________________________________________________________________________________________
-# Solution: 
-________________________________________________________________________________________________________________________
-Facade provides a simple interface to a complex subsystem. Might provide limited funcionality.
-________________________________________________________________________________________________________________________
-# Components:
-________________________________________________________________________________________________________________________
 
-________________________________________________________________________________________________________________________
+# Solution: 
+Facade provides a simple interface to a complex subsystem. Might provide limited funcionality.
+
+# Components:
 # Pros & Cons
-________________________________________________________________________________________________________________________
 ## Pros:
 - Facade isolates the clients from components with complex interface
 - reduces the number of objectrs the clients interact with.
@@ -36,9 +27,8 @@ ________________________________________________________________________________
 - Overuse leads to too many layers
 - Performance of the system may degrade
 - Can become a god object
-________________________________________________________________________________________________________________________
+
 # Applicability(When to use):
-________________________________________________________________________________________________________________________
 - You want to provide a simple interface to a complex system 
     * this could be a default view for most clients
     * Other clients that need customization can use the underlying classes directly
@@ -51,9 +41,9 @@ ________________________________________________________________________________
     * your might want to provide a novice or power user interfaces
 - Too many dependencies between clients and the implementation classes of a subsystem
 - When you want to structure a subsystem into layers.
-________________________________________________________________________________________________________________________
+
 # How to implement:
-________________________________________________________________________________________________________________________
+
 1. Check whether it is possible to provide a simpler interface than what an existing subsystem already provides. 
 You're on the right track if this interface makes the client code independent from many of the subsystem's classes.
 2. Declare and implement this interface in a new facade class. The facade should redirect the calls from client code to 
@@ -63,9 +53,8 @@ its further life cycle unless the client code already does this.
 facade. Now the client code is protected from man changes in the dubsystem code. For example, when a subssystem gets 
 upgraded to a new version, you will only need to modify the code in the facade.
 4. If the facade becomes too big, consider extracting part of its behavior to a new, refined facade class.
-________________________________________________________________________________________________________________________
+
 # Relations with other patterns
-________________________________________________________________________________________________________________________
 - Facade defines a new interface for existing objects, whereas Adapter tries to make the existing interface usable. 
 Adapter usually wraps just one object, while Facade works with an entire subsystem of objects.
 - Abstract Factory can serve as an alternative Facade when you only want to hide the way the subsystem objects are 
