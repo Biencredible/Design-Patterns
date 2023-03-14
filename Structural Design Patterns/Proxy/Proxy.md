@@ -1,13 +1,11 @@
-________________________________________________________________________________________________________________________
 # Intent:
-________________________________________________________________________________________________________________________
 Provide a surrogate or placeholder for another object to control access to it.
-- Proxy Types:
-    - Virutal: creates expensive objects on demand
-    - Cache: chaches expensive calls
-    - Remote: simplifies client implementation
-    - Protection: provides access management
-    - Smart: -performs additional actions
+## Proxy Types:
+- Virutal: creates expensive objects on demand
+- Cache: chaches expensive calls
+- Remote: simplifies client implementation
+- Protection: provides access management
+- Smart: -performs additional actions
 
 ________________________________________________________________________________________________________________________
 # Example Problem:
@@ -24,17 +22,17 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 # Pros & Cons
 ________________________________________________________________________________________________________________________
-Pros:
+## Pros:
 
 
-Cons:
-
-________________________________________________________________________________________________________________________
-Applicability(When to use):
-________________________________________________________________________________________________________________________
+## Cons:
 
 ________________________________________________________________________________________________________________________
-How to implement:
+# Applicability(When to use):
+________________________________________________________________________________________________________________________
+
+________________________________________________________________________________________________________________________
+# How to implement:
 ________________________________________________________________________________________________________________________
 - Proxy should have the same interface as that of the real object.
 - This is important because the client should not distinguish between the real subject and the poxy.
@@ -47,5 +45,5 @@ ________________________________________________________________________________
     - reduces coupling between classes.
     - used when the proxy provides a common implementation for all the classes.
 ________________________________________________________________________________________________________________________
-Relations with other patterns
+# Relations with other patterns
 ________________________________________________________________________________________________________________________
