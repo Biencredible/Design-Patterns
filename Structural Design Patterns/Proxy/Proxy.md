@@ -29,8 +29,8 @@ Provide a surrogate or placeholder for another object to control access to it.
 - This allows us to replace an object with proxy without significant changes.
 - In C++, we can overload * and -> operator without having to implement all the methods of the real subject.
 - A proxy ma create instance of the real subject.
-    - it may create the object on demand
+    * it may create the object on demand
 - One proxy can work with multiple subjects through an abstract interface
-    - reduces coupling between classes.
-    - used when the proxy provides a common implementation for all the classes.
+    * reduces coupling between classes.
+    * used when the proxy provides a common implementation for all the classes.
 # Relations with other patterns
