@@ -1,8 +1,9 @@
 #include "Bitmap.h"
+#include "BitmapProxy.h"
 
 int main()
 {
-    Image* p = new Bitmap{ "Smiley.txt" };
+    Image* p = new BitmapProxy{ "Smiley.txt" };
     p->Load();
     p->Display();
     delete p;
