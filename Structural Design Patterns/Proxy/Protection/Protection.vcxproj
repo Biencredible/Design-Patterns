@@ -126,11 +126,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RepoProxy.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Storage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="RepoProxy.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Storage.h" />
   </ItemGroup>

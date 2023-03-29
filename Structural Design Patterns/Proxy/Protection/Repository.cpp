@@ -20,11 +20,8 @@ Repository::Repository(const std::string& repoPath) : m_CurrentPath(repoPath)
 
 void Repository::CreateFile(const std::string& fileName)
 {
-    auto path = m_CurrentPath /= fileName;
-    if(exists(path))
-    {
-        throw std::runtime_error{ "Path does not exist" };
-    }
+    auto path = m_CurrentPath;
+    path /= fileName;
     std::ofstream out{ path };
     if(!out.is_open())
     {
@@ -40,15 +37,11 @@ void Repository::CreateFile(const std::string& fileName)
 
 void Repository::DeleteFile(const std::string& fileName)
 {
-    auto path = m_CurrentPath /= fileName;
-    if(exists(path))
+    auto path = m_CurrentPath;
+    path /= fileName;
+    if(!exists(path))
     {
-        throw std::runtime_error{ "Path does not exist" };
-    }
-    std::ofstream out{ path };
-    if(!out.is_open())
-    {
-        throw std::runtime_error{ "Could not create file" };
+        throw std::runtime_error{ "File does not exist" };
     }
     std::cout << GetUser()->GetInfo() << " is deleting a file\n";
     if(remove(path))
@@ -59,11 +52,8 @@ void Repository::DeleteFile(const std::string& fileName)
 
 void Repository::UpdateFile(const std::string& fileName)
 {
-    auto path = m_CurrentPath /= fileName;
-    if(exists(path))
-    {
-        throw std::runtime_error{ "Path does not exist" };
-    }
+    auto path = m_CurrentPath;
+    path /= fileName;
     std::ofstream out{ path };
     if(!out.is_open())
     {
@@ -79,11 +69,8 @@ void Repository::UpdateFile(const std::string& fileName)
 
 void Repository::ViewFile(const std::string& fileName)
 {
-    auto path = m_CurrentPath /= fileName;
-    if(exists(path))
-    {
-        throw std::runtime_error{ "Path does not exist" };
-    }
+    auto path = m_CurrentPath;
+    path /= fileName;
     std::ifstream in{ path };
     if(!in.is_open())
     {

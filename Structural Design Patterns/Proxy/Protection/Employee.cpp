@@ -10,7 +10,7 @@ Employee::Employee(const std::string& name, const std::string& role)
 std::string Employee::GetInfo() const
 {
     std::ostringstream out;
-    out << '[' << m_Role << '[' << m_Name << ' ';
+    out << '[' << m_Role << ']' << m_Name << ' ';
     return out.str();
 }
 
