@@ -8,8 +8,12 @@ Provide a surrogate or placeholder for another object to control access to it.
 - Smart: -performs additional actions
 
 # Example Problem:
+You have a massive object that cinsumees avast amount of system resources. You need it from time to time, but not 
+always. Only creating the object when it is needed, would need each clinet to run the initialization steps, which leads 
+to code duplication.
 
 # Solution: 
+
 
 # Components:
 

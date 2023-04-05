@@ -1,16 +1,19 @@
 #pragma once
-#include "Repository.h"
+#include "Storage.h"
+#include <vector>
+class Employee;
+class Repository;
 class RepoProxy :
-    public Repository
+    public Storage
 {
     Repository* m_pRepo{};
     bool isAuthorized() const;
     std::vector<std::string>m_AuthorizedRoles;
 public:
     Employee* GetUser() const;
-    void SetEmployee(Employee* emp);
+    void setEmployee(Employee* emp);
     void SetAuthorizedRoles(std::initializer_list<std::string> authorizedRoles);
-    RepoProxy(const std::string &path);
+    RepoProxy(const std::string& path);
 
 
     void CreateFile(const std::string& fileName) override;

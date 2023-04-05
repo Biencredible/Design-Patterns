@@ -4,6 +4,11 @@
 #include <thread>
 #include <fstream>
 
+Bitmap::~Bitmap()
+{
+    std::cout << __FUNCSIG__ << std::endl;
+}
+
 void Bitmap::Display()
 {
     std::cout << m_Buffer;
