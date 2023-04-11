@@ -28,12 +28,42 @@ code that expexts a service object.
 
 # Pros & Cons
 ## Pros:
+- You cna control the service object without clients knowing about it.
+- You can manage the lifecycle of the service object when clients don't care about it.
+- The proxy works even if the service object isn't ready or is not available.
+- Open/Closed Principle. You can introuce new proxies without changing the service or clients.
 
 
 ## Cons:
+- The code may become more complicated since you need to introduce a lot of new classes.
+- The response from the service might get delayed.
 
 
 # Applicability(When to use):
+- Lazy initialization (virtual proxy). This is when you have a heavyweight service object that wastes system resources 
+by being always up, even though you only need it from time to time.
+    * Instead of creating the object when the app launches you can delay the object's initialization to a time when it's
+    really needed.
+- Access control (ptotection proxy). This is when you want only specific clients to be able to use the service object; 
+for instance, when your objects are crucial parts of an operating system and clients are various launched applications 
+(including malicious ones).
+    * The proxy can pass  the rrequest to the serviceobject onl if hte client's credentioals match some criteria.
+- Local execution of a remote service (remote proxy). This is when the service is located on a remote server.
+    * In this case, the proxy üasses the client request over the network, handling all oof the nasty details of workng 
+    with the network.
+- Logging requests (logging proxy). This is when you want to kee a history of requests to the service object.
+    * The proxy can log each request before passing it to the service.
+- Caching request results (caching proxy). This is when you need to cache results of client requests and manage the life 
+cycle of this cahce, especially if results are quite large.
+    * The proxy can implement caching for recurring requests that always yield the same results. The proxy may use the
+    parameters of requests as the cache keys.
+- Smart reference. This is when you need to be able to dismiss a heavyweight objects once there are no clients that use 
+it.
+    * The proxy can keep track of clients that obtained a reference to the service object or its results. From time to 
+    time, the proxy may go over theclients and check whether they are still active. If the clients list gets empty, the 
+    proxy might dismiss the service object and free the underlying system resources.
+    The proxy can also track whether the client had modified the service object. Then the unchanged objects may be 
+    reused by other clients.
 
 # How to implement:
 - Proxy should have the same interface as that of the real object.
@@ -41,9 +71,9 @@ code that expexts a service object.
 - One way to achieve this is to inherit the poxy from the same class that he real subject inherits from.
 - This allows us to replace an object with proxy without significant changes.
 - In C++, we can overload * and -> operator without having to implement all the methods of the real subject.
-- A proxy ma create instance of the real subject.
+- A **proxy** may create instance of the real subject.
     * it may create the object on demand
-- One proxy can work with multiple subjects through an abstract interface
+- One **proxy** can work with multiple subjects through an abstract interface
     * reduces coupling between classes.
     * used when the proxy provides a common implementation for all the classes.
 # Relations with other patterns
@@ -84,9 +114,9 @@ keeps track of the doenloaded files and returns thechachedresult when the app re
     // been provided as a part of a third party library and/or defined
     // as 'final'. That's why we put the caching code into a new
     // proxy class which implements the same interface as the
-    // service class. It delegates to the servoce object only when
+    // service class. It delegates to the service object only when
     // the real requests have to be sent.
-    class CachedYoutTubeClass implements ThirdPartyYoutTubeLib is
+    class CachedYouTubeClass implements ThirdPartyYoutTubeLib is
         private field service: ThirdPartyYouTubeLib
         private field ListCache, videoCache
         field needReset
