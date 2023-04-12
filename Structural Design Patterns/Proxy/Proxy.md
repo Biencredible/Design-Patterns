@@ -76,7 +76,16 @@ it.
 - One **proxy** can work with multiple subjects through an abstract interface
     * reduces coupling between classes.
     * used when the proxy provides a common implementation for all the classes.
+    
 # Relations with other patterns
+- **Adapter** provides a different interface to the wrapped object, **Proxy** provides it with the same interface, and 
+**Decorator**, provides it with an enhanced interface.
+- **Facade** is similar to **Proxy** in that both buffer a complex entity and initialize it on its own. Unlike 
+**Facade**, **Proxy** has the same interface as its service object, which makes them interchangable.
+- **Decorator** and **Proxy** have similar, but very different intents. Both patterns are built on the composition 
+principle, where one object is supposed to delegate some of the work to another. The difference is that a **Proxy** 
+usually manages the life cycle of its service object on its own, whereas the composition of **Decorators** is always 
+controlled by the client.
 
 # Pseudocode Example
 This example illustrates how the **Proxy** pattern can help to introduce lazy initialization and caching to a 3rd party 
