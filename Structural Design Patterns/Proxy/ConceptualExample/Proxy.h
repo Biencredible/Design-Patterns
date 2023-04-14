@@ -29,4 +29,23 @@ private:
 public:
     Proxy(RealSubject* real_subject) : real_subject_(new RealSubject(*real_subject_))
     {}
+
+    ~Proxy()
+    {
+        delete real_subject_;
+    }
+
+    /**
+     * The most common applications of the Proxy pattern are lazy loading, caching, controlling the
+     * access, logging, etc. A Proxy can perform one of these things and then, depending on the 
+     * result, pass the execution to the same method in alinked RealSubject.
+    */
+    void Request() const override
+    {
+        if (this->checkAccess())
+        {
+            this->real_subject_->Request();
+            this->logAccess();
+        }
+    }
 };

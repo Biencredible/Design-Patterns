@@ -123,12 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Subject.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Proxy.h" />
     <ClInclude Include="RealSubject.h" />
     <ClInclude Include="Subject.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
