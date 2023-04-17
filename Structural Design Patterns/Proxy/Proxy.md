@@ -1,11 +1,11 @@
 # Intent:
 Provide a surrogate or placeholder for another object to control access to it.
 ## Proxy Types:
-- Virutal: creates expensive objects on demand
+- Virtual: creates expensive objects on demand
 - Cache: chaches expensive calls
-- Remote: simplifies client implementation
+- Remote: simplifies client implementation (e.g. if Object has a different address space)
 - Protection: provides access management
-- Smart: -performs additional actions
+- Smart: performs additional actions
 
 # Example Problem:
 You have a massive object that cinsumees avast amount of system resources. You need it from time to time, but not 
@@ -21,8 +21,10 @@ primary logic of the original class, you can do this in the proxy without changi
 - Service Interface: declares the interface of the service. The proxy must follow this interface to be able to disguise 
 itself as a service object.
 - Service: is a class that provides some useful buisiness logic.
-- Proxy: has a reference to the service object. After the proxy finishes its processing, it passes the request to the 
-service object.
+- Proxy: 
+    * has a reference to the service object, which allows access to the real object (service). 
+    * After the proxy finishes its processing, it passes the request to the service object.
+    * Provides identtical interface, so the real subject can be exchanged with the proxy.
 - Client: should work with bothe services and proxies via the same interface. This way you can pass a proxy into any 
 code that expexts a service object.
 
@@ -33,11 +35,9 @@ code that expexts a service object.
 - The proxy works even if the service object isn't ready or is not available.
 - Open/Closed Principle. You can introuce new proxies without changing the service or clients.
 
-
 ## Cons:
 - The code may become more complicated since you need to introduce a lot of new classes.
 - The response from the service might get delayed.
-
 
 # Applicability(When to use):
 - Lazy initialization (virtual proxy). This is when you have a heavyweight service object that wastes system resources 
