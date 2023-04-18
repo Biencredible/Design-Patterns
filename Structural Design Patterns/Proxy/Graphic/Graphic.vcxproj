@@ -123,6 +123,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Graphic.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="ImageProxy.h" />
+    <ClInclude Include="Textdocument.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ImageProxy.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
