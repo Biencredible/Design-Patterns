@@ -1,15 +1,14 @@
 #pragma once
 #include "Component.h"
+#include "Decorator.h"
+
 class ConcreteDecoratorA :
-    public Component
+    public Decorator
 {
-    Component *m_ptr{};
+    using Decorator::Decorator;
 public:
 
-    explicit ConcreteDecoratorA(Component* component)
-        : m_ptr(component)
-    {
-    }
+    
 
     void Operation() override;
 };
