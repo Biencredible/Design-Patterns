@@ -125,6 +125,10 @@
   <ItemGroup>
     <ClInclude Include="BufferedInputStream.h" />
     <ClInclude Include="BufferedOutputStream.h" />
+    <ClInclude Include="CompressedOutputStream.h" />
+    <ClInclude Include="DecompressedInputStream.h" />
+    <ClInclude Include="DecryptedStream.h" />
+    <ClInclude Include="EncryptedStream.h" />
     <ClInclude Include="FileInputStream.h" />
     <ClInclude Include="FileOutputStream.h" />
     <ClInclude Include="InputStream.h" />
@@ -133,6 +137,10 @@
   <ItemGroup>
     <ClCompile Include="BufferedInputStream.cpp" />
     <ClCompile Include="BufferedOutputStream.cpp" />
+    <ClCompile Include="CompressedOutputStream.cpp" />
+    <ClCompile Include="DecompressedInputStream.cpp" />
+    <ClCompile Include="DecryptedStream.cpp" />
+    <ClCompile Include="EncryptedStream.cpp" />
     <ClCompile Include="FileInputStream.cpp" />
     <ClCompile Include="FileOutputStream.cpp" />
     <ClCompile Include="main.cpp" />
