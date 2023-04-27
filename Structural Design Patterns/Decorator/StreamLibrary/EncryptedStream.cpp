@@ -9,10 +9,10 @@ void EncryptedStream::Write(const std::string& text)
     {
         return ch + 5;
     });
-    FileOutputStream::Write((encrypted));
+    m_pOS->Write((encrypted));
 }
 
 void EncryptedStream::Close()
 {
-    FileOutputStream::Close();
+    m_pOS->Close();
 }

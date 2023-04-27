@@ -1,12 +1,17 @@
 #pragma once
 #include "FileInputStream.h"
 class DecryptedStream :
-    public FileInputStream
+    public InputStream
 {
-    using FileInputStream::FileInputStream;
+    InputStream* m_pIS;
 
 public:
-    bool Read(std::string& text) override;
-    void Close() override;
+    explicit DecryptedStream(InputStream* _p_is)
+        : m_pIS(_p_is)
+    {
+    }
+
+    bool Read(std::string& text);
+    void Close();
 };
 

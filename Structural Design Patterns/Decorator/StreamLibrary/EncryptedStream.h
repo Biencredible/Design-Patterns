@@ -1,11 +1,11 @@
 #pragma once
 #include "FileOutputStream.h"
 class EncryptedStream :
-    public FileOutputStream
+    public OutputStream
 {
-    using FileOutputStream::FileOutputStream;
+    OutputStream* m_pOS;
 public:
-    void Write(const std::string& text) override;
-    void Close() override;
+    void Write(const std::string& text);
+    void Close();
 };
 

@@ -3,12 +3,12 @@
 
 bool BufferedInputStream::Read(std::string& text)
 {
-    auto result = FileInputStream::Read(text);
+    auto result = m_pIS->Read(text);
     std::cout << "Buffered Read\n";
     return result;
 }
 
 void BufferedInputStream::Close()
 {
-    FileInputStream::Close();
+    m_pIS->Close();
 }

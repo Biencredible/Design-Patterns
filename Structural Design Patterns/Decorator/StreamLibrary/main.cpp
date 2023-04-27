@@ -78,6 +78,11 @@ int main()
     //BufferedRead();
     /*Encrypt();
     Decrypt();*/
-    Compress();
-    Decompress();
+   /* Compress();
+    Decompress();*/
+
+    FileInputStream fsInput{ "mix.txt" };
+    BufferedInputStream bsInput{ &fsInput };
+    DecompressedInputStream decInput{ &bsInput };
+
 }

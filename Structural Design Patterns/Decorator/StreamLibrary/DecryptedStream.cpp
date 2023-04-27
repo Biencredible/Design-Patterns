@@ -4,7 +4,7 @@
 bool DecryptedStream::Read(std::string& text)
 {
     std::string encrypted{};
-    const auto result = FileInputStream::Read(encrypted);
+    const auto result = m_pIS->Read(encrypted);
     if(!encrypted.empty())
     {
         text.resize((encrypted.size()));
@@ -18,5 +18,5 @@ bool DecryptedStream::Read(std::string& text)
 
 void DecryptedStream::Close()
 {
-    FileInputStream::Close();
+    m_pIS->Close();
 }

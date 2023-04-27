@@ -4,10 +4,10 @@
 void BufferedOutputStream::Write(const std::string& text)
 {
     std::cout << "Buffered Write\n";
-    FileOutputStream::Write(text);
+    m_pOS->Write(text);
 }
 
 void BufferedOutputStream::Close()
 {
-    FileOutputStream::Close();
+    m_pOS->Close();
 }

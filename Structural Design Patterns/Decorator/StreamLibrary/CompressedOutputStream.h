@@ -3,7 +3,7 @@
 class CompressedOutputStream : public OutputStream/*:
     public FileOutputStream*/
 {
-    FileOutputStream* m_pOS;
+    OutputStream* m_pOS;
     //using FileOutputStream::FileOutputStream;
 public:
     explicit CompressedOutputStream(FileOutputStream* _p_os)

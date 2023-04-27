@@ -1,9 +1,9 @@
 #pragma once
 #include "FileInputStream.h"
-class DecompressedInputStream /*:
+class DecompressedInputStream : public InputStream/*:
     public FileInputStream*/
 {
-    FileInputStream *m_pIS;
+    InputStream *m_pIS;
    // using FileInputStream::FileInputStream;
 
 public:

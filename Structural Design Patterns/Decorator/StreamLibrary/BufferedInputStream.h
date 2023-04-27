@@ -1,13 +1,18 @@
 #pragma once
 #include "FileInputStream.h"
 class BufferedInputStream :
-    public FileInputStream
+    public InputStream
 {
     char m_Buffer[512]{};
-    using FileInputStream::FileInputStream;
+    InputStream* m_pIS;
 
 public:
-    bool Read(std::string& text) override;
-    void Close() override;
+    explicit BufferedInputStream(InputStream* _p_is)
+        : m_pIS(_p_is)
+    {
+    }
+
+    bool Read(std::string& text);
+    void Close();
 };
 

@@ -2,10 +2,10 @@
 #include "FileOutputStream.h"
 
 class BufferedOutputStream :
-    public FileOutputStream
+    public OutputStream
 {
     char m_Buffer[512]{};
-    using FileOutputStream::FileOutputStream;
+    OutputStream* m_pOS;
 public:
     void Write(const std::string& text) override;
     void Close() override;
