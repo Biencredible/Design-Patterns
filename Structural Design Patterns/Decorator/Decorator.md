@@ -1,6 +1,6 @@
 # Intent:
-Attach additional responisbilities to an object dynamically. Decorators provide a flexible alternative to subclassing 
-for extending functionality
+Attach additional responisbilities an behaviours to an object dynamically. Decorators provide a flexible alternative to 
+subclassing for extending functionality
 
 ## Decorator Types:
 - **Dynamic Decorator**: Behaviour is added dynamically, at runtime
@@ -8,8 +8,29 @@ for extending functionality
 - **Functional Decorator**: decorate a function instead of an object
 
 # Example Problem:
-
+Imagine your are working on a notification library which lets other programs notify their users about important events.
+The initial version of the library was based on the *notifier* class that had only a few fields, a constructor and a 
+single *send* method. The method could accept a message argument from a client and send the message to a list of emails 
+that were passed to the notifier via its constructor. A third-party app which acted as a client was supposed to create 
+and configure the notifier object once, and then use it each time something important happened.
+At some point, you realize that users of the library expect more than just email notifications. Many of them would like 
+to receive an SMS about critical issues. Others would like to be notified on facebook and, of course, the corporate 
+would love to get Slack notifications.
+You extended the *Notifier* class and put the additional notification methods into new subclasses. Now the client was 
+supposed to instantiate the desired notification class and use it for all further notifications.
+Sending an SMS and Facebook notification is not possible at the same time, so it would be necessary to create a
+SMS + Facebook notifier and so on. This would lead to an extensive amount of classes if each possible combination would 
+be handled that way.
 # Solution: 
+Extending a class is waht first comes to mind. But
+* Inheritance is static. You can't alter the behavior of an existing object at runtime. You can only replace the whole 
+object with another one that's created from a different subclass.
+* Subclasses can have just one parent class. In most languages, inheritance doesn't let a class inherit behaviors of 
+multiple classes at the same time.
+One of the ways to overcome these caveats is by using *Aggregation* or *Composition*. instead of *Inheritance*. Bothe of 
+the alternatives work almost the same way: one object has areference to another and delegates it some work, wheras with
+inheritance, the object itself is able to do that work, inheriting the behavior from its superclass.
+
 
 # Components:
 
