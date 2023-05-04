@@ -1,5 +1,5 @@
 # Intent:
-Attach additional responisbilities an behaviours to an object dynamically. Decorators provide a flexible alternative to 
+Attach additional responisbilities an behaviors to an object dynamically. Decorators provide a flexible alternative to 
 subclassing for extending functionality
 
 ## Decorator Types:
@@ -30,9 +30,22 @@ multiple classes at the same time.
 One of the ways to overcome these caveats is by using *Aggregation* or *Composition*. instead of *Inheritance*. Bothe of 
 the alternatives work almost the same way: one object has areference to another and delegates it some work, wheras with
 inheritance, the object itself is able to do that work, inheriting the behavior from its superclass.
+With this new approach you can easily the linked "helper" object with another, changing the behavior of the container 
+at runtime. An object can use the behavior of various classes, having references to multiple objects and delegating them 
+all kind of work.
 
 
 # Components:
+* Component: Declares common interface for both wrappers and wrapped objects.
+* Concrete Component: is a class of objects being wrapped. It defines the basic behavior, which can be altered by 
+decorators.
+* Base Decorator: has a field for referencing a wrapped object. The field's type should be declared as the component 
+interface so it can contain both concrete components and decorators. The base decorator delegates all operattons to the
+wrapped object.
+* Concrete Decorators: defines extra behaviors that can be added to components dynamically. Concrete decorators override 
+methods of the base decorators and execute their behavior either before or after calling the parent method.
+* Client: can wrap components in multiple layers of decorators, as long as it works with all objects via the component 
+interface.
 
 # Pros & Cons
 ## Pros:
