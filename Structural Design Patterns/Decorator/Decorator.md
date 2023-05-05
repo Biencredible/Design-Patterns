@@ -95,3 +95,46 @@ interface.
 # Relations with other patterns
 
 # Pseudocode Example
+In this example, the **Decorator** pattern lets you compress and encrypt sensitive data independently from the code 
+that actually uses this data.
+The Application wraps the data source object with a pair of decorators. Both wrappers change the way the data is 
+writtten to and read from the disk:
+* Just before the data is written to disk, the decorators encrypt and and protected data to the file without knowing 
+about the change. 
+* Right after the data is read from disk, it goes through the same decorators, which decompress and decode it.
+The decorators and the data source class implement the same interface, which makes them all interchangeable in the 
+client code.
+    // The component interface defines operations that can be alterd by decorators
+    interface DataSource is
+        method writeData(data)
+        method readData():data
+
+    // Concrete components provide default implementations for the operations. Threre might be several variations of 
+    // these classes in a program.
+    class FileDataSource implements DataSource is
+        constructor FileDataSource(filename) {...}
+        
+        method writeData(data) is
+            // Write data to file.
+
+        method readData():data is
+            // Read data from file.
+
+    // The base decorator class folloes the same interface as the other components. The primary purpose of this class is
+    // define the wrapping interface for all concrete decorators. The default implementation. of the wrapping code might 
+    // include a field for storing a wrapped component and the means to initialize it.
+    class DataSourceDecorator implements DtaSource is
+        protected field wrappee: DataSource
+
+        constructor DataSourceDecorator(source: DataSource) is
+            wrappee = source
+
+        // The base decorator simply delegates all work to the wrapped component. Exta behaviors can be added in 
+        // concrete decorators.
+        method writeData(data) is
+            wrappee.writeData(data)
+
+        // Concrete decorators may call the parent implementation of the operation instead of calling the wrapped object 
+        // directly. THis approach simplifies extension of decorator classes.
+        method readData();data is
+            return wrappee.readData()
