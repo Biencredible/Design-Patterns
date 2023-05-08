@@ -138,3 +138,72 @@ client code.
         // directly. THis approach simplifies extension of decorator classes.
         method readData();data is
             return wrappee.readData()
+
+    // Concrete decorators ust call methods on the wrapped object, but may add smothing of their own to the result.
+    // Decorators can execute the added behavior either before or after the call to a wrapped object.
+    class EncryptionDecorator extends DataSourceDecorator is
+        method writeData(data) is
+            // 1. Encrypt passed data.
+            // 2. Pass encrypted data tp the wrappee's writeData method
+
+        method readData():data is
+            // 1. Get data from the wrappee's readData method.
+            // 2. Try to decrypt it if it's encrypted.
+            // 3. Return the result.
+
+    // You can wrap objects in several layers of decorators.
+    class CompressionDecorator extends DataSourceDecorator is
+        method writeData(data) is
+            // 1. Compress passed data.
+            // 2. Pass compressed data to the wrappee's writeData method.
+
+        method readData():data is
+            // 1. Get data from the wrappee's readData method.
+            // 2. Try to decompress it if it's compressed.
+            // 3. Return the result.
+
+    // Option 1. A simple example of a decorator assembly.
+    class Application is 
+        method dumbUsageExample() is
+            source = new FileDataSource("somefile.dat")
+            source.writeData(salaryRecords)
+            // The target file has been written with compressed data.
+
+            source = new CompressionDecorator(source)
+            source.writeData(salaryRecords)
+            // The target file has been written with compressed data.
+
+            source = new EncryptionDecorator(source)
+            // The source variable now contains this:
+            // Encryption > Compression > FileDataSource
+            source.writeData(SalaryRecords)
+            // The file has been written with compressed encrypted data.
+
+    // Option 2. Client code that uses an extenral data source. SalaryManager objects neither know nor cate about data 
+    // storage specifics. They work with pre-configured data source received from the app configurator.
+    class SalaryManager is
+        field source: DataSource
+
+        constructor SalaryManager(source: DataSource) { ... }
+
+        method load() is
+            return source.readData()
+
+        method save() is
+            source.writeData(salaryRecords)
+        // ... Other useful methods ...
+
+
+    // THe app can assemble differennt stacks of decorators ata runtime, deprending on the configuration or environment.
+    class ApplicationConfigurator is
+        method configurationExample() is
+            source = new FileDataSiurce("salary.data")
+            if(enabledEncryption)
+                source = new EnctryptionDecorator(source)
+            if (enabledCompression)
+                source = new CompressionDecorator(source)
+
+            logger = new SalaryManager(source)
+            salary = logger.load()
+
+        // ...        
