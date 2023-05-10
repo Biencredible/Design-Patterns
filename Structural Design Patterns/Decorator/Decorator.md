@@ -125,6 +125,21 @@ interface. In addition, **Decorator** supports recursive composition, which isn'
 **Decorator** provides it wiht an enhanced interface.
 * **Chain of Responsibility** and **Decorator** have similar class structures. Both patterns rely on recursive 
 composition to pass the execution through a series of objects. However, there are several crucial differences.
+The **Chain of Responsibility** handlers can execute arbitrary operations independently of each other. THey can also 
+stop passing the request further at any point. on the other hand, varios **Decorators** can extend the object's
+behavior while keeping it consistent with the base interface. In additon, decorators aren't allowed to break the flow
+of the request.
+* **Composite** and **Decorator** have similar structure diagrams since they both rely on recursive composition to 
+organize an open-ended number of objects.
+A **Decorator** is like a **Composite** but only has one child component. There's another significant difference: 
+**Decorator** adds additional responsibilities to the wrapped behavior of a specific object in the **Composite** tree.
+* Designs that make heavy use of **Composite** and **Decorator** can often benefit from using **Pototype**. Applying the 
+pattern lets you clone complex structures instead of reconstructing them from scratch.
+* **Decorator** lets you change the skin of an object, while **Strategy** lets you change the guts.
+* **Decorator** and **Proxy** have similar structures, but very different intents. Both patterns are built on the 
+composition principle, where one object is supposed to delegate some of the work to another. The difference is that 
+**Proxy** usually manages the life cycle of its service object on its own, whereas the composition of **Decorator** is 
+always controlled by the client.
 
 # Pseudocode Example
 In this example, the **Decorator** pattern lets you compress and encrypt sensitive data independently from the code 
