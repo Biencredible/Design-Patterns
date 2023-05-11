@@ -1,4 +1,6 @@
 #pragma once
+#include "Decorator.h"
+
 /**
  * Concrete Decorators call the wrapped object and alter its result in some way.
 */
@@ -10,5 +12,15 @@ class ConcreteDecoratorA : public Decorator
     */
 public:
 
+
+    explicit ConcreteDecoratorA(Component* component)
+        : Decorator(component)
+    {
+    }
+
+    std::string Operation() const override
+    {
+        return "ConcreteDecoratorA(" + Decorator::Operation() + ")";
+    }
 };
 
