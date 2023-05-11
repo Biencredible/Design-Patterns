@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.33529.398
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConceptualExample", "ConceptualExample.vcxproj", "{AE8888B4-AC74-4629-A5EC-E6CC8F764687}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VisualComponentDecoraotr", "..\VisualComponentDecoraotr\VisualComponentDecoraotr.vcxproj", "{0A119D90-2420-43F0-9C99-C13A591A81B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{AE8888B4-AC74-4629-A5EC-E6CC8F764687}.Release|x64.Build.0 = Release|x64
 		{AE8888B4-AC74-4629-A5EC-E6CC8F764687}.Release|x86.ActiveCfg = Release|Win32
 		{AE8888B4-AC74-4629-A5EC-E6CC8F764687}.Release|x86.Build.0 = Release|Win32
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Debug|x64.ActiveCfg = Debug|x64
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Debug|x64.Build.0 = Debug|x64
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Debug|x86.ActiveCfg = Debug|Win32
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Debug|x86.Build.0 = Debug|Win32
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Release|x64.ActiveCfg = Release|x64
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Release|x64.Build.0 = Release|x64
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Release|x86.ActiveCfg = Release|Win32
+		{0A119D90-2420-43F0-9C99-C13A591A81B6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
