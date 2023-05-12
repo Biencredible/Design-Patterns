@@ -95,7 +95,7 @@ that uses these objects.
     * Many programming languages have the final keyword that can be used to prevent further extension of a class. For
     a final class, the only way to reuse the existing behavior would be to wrap the class with your own wrapper, using
     the **Decorator** pattern.
-- Only add new functionality to singe objects instead of whole classes.
+- Only add new functionality to single objects instead of whole classes.
 
 # How to implement:
 - A Decorator's interface must conform to the interface of the object it decorates

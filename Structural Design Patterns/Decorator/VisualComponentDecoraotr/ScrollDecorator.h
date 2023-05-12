@@ -12,7 +12,8 @@ public:
 
     std::string draw() override
     {
-        return (Decorator::draw() + " and add a scroll bar \n");
+        return Decorator::draw() + " and add a scroll bar \n"
+        + scroll();
     }
 
     std::string scroll()
