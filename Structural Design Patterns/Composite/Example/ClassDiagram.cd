@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Leaf" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="Component" FixedFromPoint="true">
+      <Path>
+        <Point X="6.062" Y="1.062" />
+        <Point X="6.062" Y="1.375" />
+        <Point X="4.75" Y="1.375" />
+        <Point X="4.75" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Leaf.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Composite">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="Component" FixedFromPoint="true">
+      <Path>
+        <Point X="6.062" Y="1.062" />
+        <Point X="6.062" Y="1.375" />
+        <Point X="7.75" Y="1.375" />
+        <Point X="7.75" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="m_Children" Type="std::vector&lt;_Ty, _Alloc&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="2.5" />
+        <Point X="8.875" Y="2.5" />
+        <Point X="8.875" Y="0.846" />
+        <Point X="6.75" Y="0.846" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAIABAAAAAAAAAIAAAEAAAAAAAA=</HashCode>
+      <FileName>Composite.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_Children" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUIAEIEqCrBsEEBAAOMIAAAyAAUEQBIAhQkwggAFUkI=</HashCode>
+      <FileName>C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Component" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAAAAAAAAAAIABAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Component.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
