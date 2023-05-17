@@ -9,5 +9,6 @@ public:
     virtual void Add(Widget* pWidget) = 0;
     virtual void Remove(Widget* pWidget) = 0;
     virtual ~Widget() = default;
+    virtual Widget* GetFrame() { return nullptr; }
 };
 

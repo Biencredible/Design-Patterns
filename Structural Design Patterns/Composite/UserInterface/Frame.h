@@ -12,5 +12,7 @@ public:
     void SetVisibility(bool visibility) override;
     void Add(Widget* pWidget) override;
     void Remove(Widget* pWidget) override;
+    Widget* GetFrame() override { return this; }
+    ~Frame();
 };
 

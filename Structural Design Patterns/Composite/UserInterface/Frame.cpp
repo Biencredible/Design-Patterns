@@ -43,3 +43,11 @@ void Frame::Remove(Widget* pWidget)
 {
     m_Children.erase(remove(begin(m_Children), end(m_Children), pWidget), end(m_Children)); // Only works since C++20
 }
+
+Frame::~Frame()
+{
+    for(auto pChild : m_Children)
+    {
+        delete pChild;
+    }
+}

@@ -18,8 +18,10 @@ void Button::SetVisibility(bool visibility)
 
 void Button::Add(Widget* pWidget)
 {
+    throw std::runtime_error{ "Not implemented" };
 }
 
 void Button::Remove(Widget* pWidget)
 {
+    throw std::runtime_error{ "Not implemented" };
 }
