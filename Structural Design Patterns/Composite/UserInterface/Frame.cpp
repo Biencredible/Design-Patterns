@@ -37,10 +37,12 @@ void Frame::SetVisibility(bool visibility)
 void Frame::Add(Widget* pWidget)
 {
     m_Children.push_back(pWidget);
+    pWidget->SetParent(this);
 }
 
 void Frame::Remove(Widget* pWidget)
 {
+    pWidget->SetParent(nullptr);
     m_Children.erase(remove(begin(m_Children), end(m_Children), pWidget), end(m_Children)); // Only works since C++20
 }
 
