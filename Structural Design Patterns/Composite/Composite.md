@@ -28,6 +28,7 @@ the same via the common interface. When you call a method, the objects themselve
 
 # Components:
 ![image info](./structure-en.png)
+Image by https://refactoring.guru
 * **Component**: is an interface and describes operations that are common to both simple and complex elements of the 
     tree.
 * **Leaf**: is a basic element of a tree that doesn't have subelements. Usually leaf components end up doing most of 

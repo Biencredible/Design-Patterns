@@ -20,6 +20,7 @@ the 3rd party library possible.
 
 # Components:
 ![image info](./structure-object-adapter.png)
+Image by https://refactoring.guru
 * **Target**: The interface the client is using.
 * **Client**: Works with objects, which interfaces are the same as target.
 * **Adaptee**: Class with incompatible interface

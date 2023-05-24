@@ -12,6 +12,7 @@ classes and hard to comprehend and maintain.
 
 # Components:
 ![image info](./structure.png)
+Image by https://refactoring.guru
 # Pros & Cons
 ## Pros:
 - **Facade** isolates the clients from components with complex interface

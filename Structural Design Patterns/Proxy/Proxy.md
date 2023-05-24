@@ -19,6 +19,7 @@ primary logic of the original class, you can do this in the proxy without changi
 
 # Components:
 ![image info](./structure.png)
+Image by https://refactoring.guru
 - **Service Interface**: declares the interface of the service. The proxy must follow this interface to be able to disguise 
 itself as a service object.
 - **Service**: is a class that provides some useful buisiness logic.

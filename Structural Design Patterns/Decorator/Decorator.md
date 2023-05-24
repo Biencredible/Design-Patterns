@@ -37,6 +37,7 @@ all kind of work.
 
 # Components:
 ![image info](./structure.png)
+Image by https://refactoring.guru
 * Component: Declares common interface for both wrappers and wrapped objects.
 * Concrete Component: is a class of objects being wrapped. It defines the basic behavior, which can be altered by 
 decorators.
