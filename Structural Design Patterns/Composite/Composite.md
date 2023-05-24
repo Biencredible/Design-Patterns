@@ -81,6 +81,28 @@ Image by https://refactoring.guru
 
 
 # Pseudocode Example
+![image info](./example.png)
+Image by https://refactoring.guru
 
-        
+The *CompoundGraphic* class is a composite that can comprise any number of sub-shapes, including other compound shapes. 
+A compound shape has the same methods as a simple shape. However, instead of doing something on its own, a compound 
+shape passes the request recurively to all its children and "sums up" the reslt.
+The Client code works with all shapes through the single interface common to all shape classes. Thus, the client doesn't
+know whether it's working with a simple shape or a compound one. The client can work with very complex object structures
+without being coupled to concrete classes that form that structure.
+    // The composite interface declares common operations for both somple and complex objects of a composition.
+    interface Graphic is
+        method move(x, y)
+        method draw()
 
+    // The leaf class represents end objects of acomposition. A leaf object can't have any sub-objects. Usually, it's 
+    // leaf objects that do the actual work, while composite objects only delegate to their sub-components.
+    class Dot implements Graphic is
+        field x, y
+
+        constructor Dot(x, y) { ... }
+        method move(x, y) is
+            this.x += x, this.y += y
+
+        method draw() is
+            // Draw a dot at X and Y.
