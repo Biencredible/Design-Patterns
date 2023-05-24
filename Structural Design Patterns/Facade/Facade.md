@@ -11,6 +11,7 @@ classes and hard to comprehend and maintain.
 **Facade** provides a simple interface to a complex subsystem. Might provide limited funcionality.
 
 # Components:
+![image info](./structure.png)
 # Pros & Cons
 ## Pros:
 - **Facade** isolates the clients from components with complex interface

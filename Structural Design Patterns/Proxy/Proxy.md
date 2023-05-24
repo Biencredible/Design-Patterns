@@ -18,14 +18,15 @@ proxy to all the clients that used the original object. This way, if something n
 primary logic of the original class, you can do this in the proxy without changing hte original class.
 
 # Components:
-- Service Interface: declares the interface of the service. The proxy must follow this interface to be able to disguise 
+![image info](./structure.png)
+- **Service Interface**: declares the interface of the service. The proxy must follow this interface to be able to disguise 
 itself as a service object.
-- Service: is a class that provides some useful buisiness logic.
-- Proxy: 
+- **Service**: is a class that provides some useful buisiness logic.
+- **Proxy**: 
     * has a reference to the service object, which allows access to the real object (service). 
     * After the proxy finishes its processing, it passes the request to the service object.
     * Provides identtical interface, so the real subject can be exchanged with the proxy.
-- Client: should work with bothe services and proxies via the same interface. This way you can pass a proxy into any 
+- **Client**: should work with bothe services and proxies via the same interface. This way you can pass a proxy into any 
 code that expexts a service object.
 
 # Pros & Cons

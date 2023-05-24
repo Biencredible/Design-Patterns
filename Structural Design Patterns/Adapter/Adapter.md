@@ -19,10 +19,11 @@ the 3rd party library possible.
 **Adapter** inherits from the adaptee and calls the methods directly
 
 # Components:
-Target: The interface the client is using.
-Client: Works with objects, which interfaces are the same as target.
-Adaptee: Class with incompatible interface
-Adapter: Adapts interface of adaptee to the interface of target.
+![image info](./structure-object-adapter.png)
+* **Target**: The interface the client is using.
+* **Client**: Works with objects, which interfaces are the same as target.
+* **Adaptee**: Class with incompatible interface
+* **Adapter**: Adapts interface of adaptee to the interface of target.
 
 # Pros & Cons
 ## General Pros:
