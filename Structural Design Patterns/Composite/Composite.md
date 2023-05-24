@@ -27,11 +27,17 @@ the same via the common interface. When you call a method, the objects themselve
 
 
 # Components:
-![Structure](/structure-en.png)
+![image info](./structure-en.png)
 * **Component**: is an interface and describes operations that are common to both simple and complex elements of the 
-tree.
+    tree.
 * **Leaf**: is a basic element of a tree that doesn't have subelements. Usually leaf components end up doing most of 
-the real work, since they don't have anyone to delegate the work to.
+    the real work, since they don't have anyone to delegate the work to.
+* **Composite**: is an element that has sub-elements: leaves or other composites. A composite doesn't know the concrete
+    classes of its children. It works with all sub-elements only via the component interface. Upon receiving a request,
+    a composite delegates the work to its sub-elements, processes intermediate results and then returns the final result 
+    to the client.
+* **Client**: works with all elements through the component interface. As a result, the client can work on the same way 
+    with both simple or complex elements of the tree.
 
 
 # Pros & Cons
