@@ -57,6 +57,13 @@ Image by https://refactoring.guru
 # Applicability(When to use):
 * You want to create complex representations of objects using part-whole hierachy.
 * You want the clients to treat all the objects in the Composite structure uniformly without relying on type of object.
+* Use when you have to implement a tree-like structure.
+    - The Composite pattern provides you with two basic element types that share a common interface: simple leaves and 
+    complex containers. A container can be composed of both leaves and other containers. This lets you construct nested 
+    recursive object structure that resmbles a tree.
+* Use when you want the client code to trat both simple and complex elements uniformly.
+    - All elements defined by the composite pattern share a common interface. Using this interface, the client doesn't 
+    have to worry about the concrete class of the objects it works with.
 
 
 # How to implement:
