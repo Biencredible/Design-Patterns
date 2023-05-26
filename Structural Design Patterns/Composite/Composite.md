@@ -48,11 +48,16 @@ Image by https://refactoring.guru
 * Clients don't have to deal with multiple classes; this promotes loose coupling & makes the code flexible
 * New kinds of components can be added
     - existing code does not need any modification & will still work
+* You can work with complex tree structures more conveniently: use polymorphism and recursion to your advantage.
+* *Open/Closed Principle*. You can introduce new element types into the app without breaking the existing code, which
+now works with the object tree.
 
 ## Cons:
 * Difficlut to restrict the type of components that can be composed in a composite
     - cannot create a composite made up of certain kinds of components.
 * Not all operations in *Component* may be applicable to the *Leaf* classes
+* It might be difficult to provide a common interface for classes whose functionality differs too much. In certain 
+scenarios, you'd need to overgeneralize the component interface, making it harde to comprehend.
 
 # Applicability(When to use):
 * You want to create complex representations of objects using part-whole hierachy.
