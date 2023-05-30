@@ -99,9 +99,23 @@ supposed to be delegating most of the work to sub-elements.
 operations can be declared in the component interface. This would violate the *Interface Segregation Principle* because
 methods will be empty in the leaf class. However, the client will be able to treat all the elements equally, even when 
 composing the tree.
-
-    
+ 
 # Relations with other patterns
+* You can use **Builder** when creating complex **Composite** trees beccause you can program its construction steps to 
+work recursively.
+* **Chain of Responsibility** is often used in conjunction with **Composite**. In this case, when a leaf component gets
+a request, it may pass it through the chain of all of the parent components down to the root of the bject tree.
+* You can use **Iterators** to traverse **Composite** trees.
+* You can use **Visitor** to execute an ooperation over an entire **Composite** tree.
+* You can implement shared leaf nodes of the **Composite** tree as **Flyweights** to save some RAM.
+* **Composite** and **Decorator** have similar structure diagrams since both rely on recursive composition to organize 
+an openended number of objects. A **Decorator** is like a **Composite** but only has one child component. There's 
+another significant difference: **Decorator** adds additional responsibilities to the wrapped object, while **Composite**
+just "sums up" its children's results. However, the patterns can slo cooperate: you can use **Decorator** to extend the 
+behavior of a specific object in the **Composite** tree.
+* Designs that make heavy use of **Composite** and **Decorator** can often benefit from using **Prototype**. Applying 
+the pattern lets you clone complex structures instead of re-constructing them from scratch.
+
 
 
 
