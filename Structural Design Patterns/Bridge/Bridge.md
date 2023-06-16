@@ -37,6 +37,23 @@ implementations via the general implementation interface.
 
 
 # Applicability(When to use):
+* Use the bridge design pattern when you want to divide and organize a monolithic class that has several variants of
+some functionality.
+The bigger a class becomes, the harder it is to figure out how it works, and the longer it takes to make a change. The
+changes across the whole class, which often results in making errors or not addressing some critical side effects.
+The Bridge pattern lets you split the monolithic class into several class hierarchies. After this, you can change the 
+classes in each hierarchy independently of the classes in the others. This approach simplifies code maintenance and 
+minimizes the risk of breaking existing code.
+* Use the pattern when you need to extend a class in several orthogonal (independent) dimensions.
+The bridge suggests that you extract a seperate class hierarachy for each of the dimensions. THe original class
+delegates the related work to the objects belongiong to those hierarchies instead of doing everything on its own.
+* Use the Bridge if you need to be able to switch implementation at runtime.
+Although it's optional, the Bridge pattern lets you replace the implementation object inside the abstraction. It's as 
+easy as assigning a new value to a field.
+By the way, this last item is the main reason why so many people confuse the Bridge with the **Strategy** pattern. 
+Remember that a pattern is more than just a certain way to structure your classes. It may also communicate intent and a
+problem being addressed.
+
 
 
 
