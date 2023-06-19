@@ -31,9 +31,15 @@ implementations via the general implementation interface.
 
 # Pros & Cons
 ## Pros:
+* You can create platform-independent classes and apps.
+* The client code works with high-level abstractions. It isn't exposed to the platform details.
+* Open/Closed Principle. You can introduce new abstract implementations independently from each other.
+* Single Responsibility Priciple. You can focus on high-level logic in the abstraction and on platform details in the 
+implementation.
 
 
 ## Cons:
+* You might make the code more complicated by applying the to a highly cohesive class.
 
 
 # Applicability(When to use):
