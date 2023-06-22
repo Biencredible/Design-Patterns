@@ -59,6 +59,8 @@ easy as assigning a new value to a field.
 By the way, this last item is the main reason why so many people confuse the Bridge with the **Strategy** pattern. 
 Remember that a pattern is more than just a certain way to structure your classes. It may also communicate intent and a
 problem being addressed.
+* When a permanent connnection between abstraction and its implementation shall be prevented. E.g. when the selecting or 
+switching should be possible at run-time-
 
 
 # How to implement:
