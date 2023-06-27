@@ -3,9 +3,20 @@ Use sharing to support large numbers of fine-grained objects efficiently.
 
 
 # Example Problem:
+You create a game with lots od particles like bullets, shrapnel and missile for example. Each 
+particle is represented in its own object with lots of data. The computer will run out of RAM.
+![image info](./problem-en.png)
 
-
-# Solution: 
+# Solution:
+The particle class contains fields like sprite, which have a big size. All bullets, for example, 
+have the same sprite and the same color. Other fields like vector are unique to each particle.
+![image info](./solution1-en.png)
+Constant data is called the objects intrinsic state and the changing data is called an objects
+extrinsic state.
+The Flyweight pattern suggests that extrinsic state should not be stored in the object. Pass the 
+extrinsic state to functions who care. Only the intrinsic state stays with the object, letting you 
+resuse it in different contexts. You now only need one object for each different intrinsic state.
+![image info](./solution3-en.png)
 
 
 
