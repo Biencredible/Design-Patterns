@@ -48,7 +48,13 @@ static and put it inside an actual flyweight class.
 
 # Components:
 ![image info](./structure.png)
-1. The flyweight pattern is merely an optimization. Before ap
+* The flyweight pattern is merely an optimization. Before applying it, make sure your program does 
+have the RAM consumption problem related to ahving a massive number of similar objects in memoty at 
+the same time. Make sure that this problem can't be solved in any other meaningful way.
+* **Flyweight**: contains the protion of the original object's state that can be shared between 
+multiple objects. The same flyweight object can be used in many different contexts. The state stored 
+inside a flywiehgt is called *intrinsic*. The state passed to the flyweight's methods is called
+*extrinsic*.
 
 
 # Pros & Cons
