@@ -16,12 +16,39 @@ extrinsic state.
 The Flyweight pattern suggests that extrinsic state should not be stored in the object. Pass the 
 extrinsic state to functions who care. Only the intrinsic state stays with the object, letting you 
 resuse it in different contexts. You now only need one object for each different intrinsic state.
-![image info](./solution3-en.png)
+
+**Extrinsic state storage**
+In most cases the extrinsic state is moved to container object. In the example above it's the *Game* 
+object thath stores all particles in the *particles* field. To move the extrinsic state into this 
+class, you need to create several array fields for storing coodinates, vectors, and speed of each 
+individual particle. But that's not all. YOu need another array for storing references to a specific
+flyweight that represents a particle. These arrays must be in sync so tat you can access all data
+of a particle using the same index.
+![image info](./solution2-en.png)
+A more elegant solution is to create a seperate context class that would store the extrinsic state 
+along with reference to the flyweight object. This approach would require having just asingle array 
+in the container class. There is still an object needed for every particle, but the they are smaller
+without the large fields.
+
+**Flyweight and immutability**
+Since the same flyweight object can be used in diffrent contexts, you have to make sure that its 
+state can't be modified. A flyweight should initialize its stae just once via a constructor 
+parameters. It shouldn't expose any setters or public fields to other objects.
+
+**Flyweight factory**
+For more convinient acces to various flyweights, you can create afactory method that manages a pool 
+of existing flyweight objects. The method accepts the intrinsic state of the desired flyweight from 
+a client, looks for an existing flyweight object matching this state, and returns it if it was 
+found. If not, it creates a new flywieght and adds it to the pool.
+There are several options where this method could be placed. The most obvious place is a flyweight 
+container. ALternatively, you could create a new factory class. Or you could make the factory method 
+static and put it inside an actual flyweight class.
 
 
 
 # Components:
-![image info](./structure-en.png)
+![image info](./structure.png)
+1. The flyweight pattern is merely an optimization. Before ap
 
 
 # Pros & Cons
