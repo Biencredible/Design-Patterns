@@ -55,6 +55,19 @@ the same time. Make sure that this problem can't be solved in any other meaningf
 multiple objects. The same flyweight object can be used in many different contexts. The state stored 
 inside a flywiehgt is called *intrinsic*. The state passed to the flyweight's methods is called
 *extrinsic*.
+* **Context**: contains the extrinsic state, unique across all original objects. When a context is 
+paired with one of the flyweight objects, it represents the full state of the original object.
+* Usually, the behavior of the original object remains in the flyweight class. In this case, whoever 
+calls a flyweight's method must also pass appropriate bits of the extrinsic state into the 
+method's parameters. On the other hand, the behavior can be moved to the context class, which would 
+use the context class, which would use the linked flyweight merely as a data object.
+* **Client** clalculates or stores the extrinsic state of flyweights. From the client's perspective, 
+a flyweight is a template object which can be configured at runtime by passong some contextual data
+into parameters of its methods.
+* **Flyweight Factory**: manages a pool of existing flyweights. With the factory, clients don't 
+create flyweights directly. Instead the call the factory, passong it bits of the intrinsic state of
+the desired flyweight. The factory looks over previously created flyweights and either returns an 
+existing one that matches search criteria or creates a new one if nothing is found.
 
 
 # Pros & Cons
