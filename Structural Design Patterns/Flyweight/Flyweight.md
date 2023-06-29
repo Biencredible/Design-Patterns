@@ -100,3 +100,7 @@ existing one that matches search criteria or creates a new one if nothing is fou
 
 
 # Pseudocode Example
+In this example, the **Flyweight** pattern helps to redurce memory usage when rendering millions of 
+tree  objects on a canvas.
+![image info](./example.png)
+
