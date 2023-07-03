@@ -80,6 +80,13 @@ existing one that matches search criteria or creates a new one if nothing is fou
 
 
 # Applicability(When to use):
+* Use the Flyweight pattern only when your program must support a huge number of objexts which 
+barely fit into available RAM. 
+The benefit of applying the pattern depends heavily on how and where it's used. It's most useful 
+when:
+- an application needs to spawn a huge number of similar objects.
+- this drains all available RAM on target device
+- the objects contain duplicate states which can be extracted and shared betwen multiple objects.
 
 
 
@@ -88,11 +95,27 @@ existing one that matches search criteria or creates a new one if nothing is fou
 * It is requested from a pool.
 * Typically a factory that may use associative container to store the flywieghts.
 * A client requests a fly weight through its key.
-* Th epool will either create it with intrinsic state or supply an existing one.
-* THe extrinsic state should be computed separately.
+* The pool will either create it with intrinsic state or supply an existing one.
+* The extrinsic state should be computed separately.
 * The interface of the flyweight does not enforce sharing. Some objects may be unshare.
-* THe pool can instantiate all flyweights and keep them around permanently if their count is low.
+* The pool can instantiate all flyweights and keep them around permanently if their count is low.
 * The flywieghts ar immutable, and their behavior depends on the extrinsic state.
+
+1. Divide fields of class that will become flywights into two parts:
+- The intrinsic state: fields that contain unchanging fata duplicated across many objects.
+- the extrinsic state: the fields that contain contextual data unique to each object.
+2. Leave the fields that represent the intrinsic state in the class, but make sure they're 
+immutable. They should take their initial values only inside the constructor.
+3. Go over methods that use fields of the extrinsic state. For each field used in the method,
+introduce a new parameter and use it instead of the field.
+4. Optionally, create a factory class to manage the pool of flyweights. It should check for an 
+existing flyweight before creating a new one. Once the factory is in place, clients must only 
+request flyweights through it. They should describe the desired flyweight by passing its 
+intrinsic state to the factory.
+5. The client must store or calculate values of the extrinsic state (context) to be able to call 
+methods of flyweight objects. For the sake of convinience, the extrinsic state along with the 
+flyweight object. For the sake of convinience, the extrinsic state along with the flyweight-
+referencing field may be moved to a separate context class.
 
  
 # Relations with other patterns
@@ -160,6 +183,6 @@ reusing it if needed.
             foreach(tree in trees) do
                 tree.draw(canvas)
 
-                
+
 
 
