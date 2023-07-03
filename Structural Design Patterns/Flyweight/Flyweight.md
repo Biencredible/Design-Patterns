@@ -146,5 +146,20 @@ reusing it if needed.
         method draw(canvas) is
             type.draw(canvas, this.x, this.y)
 
-    */
+    // The Tree and the Forest classes are the flyweight's client's. You can merge them if you plan
+    // to develop the Tree class any further.
+    class Forest is
+        field trees: collection of Trees
+
+        method plantTree(x, y, name, color, texture) is
+            type = TreeFactory.getTreeType(name, color, texture)
+            tree = new Tree(x, y, type)
+            trees.add(tree)
+
+        method draw(canvas) is
+            foreach(tree in trees) do
+                tree.draw(canvas)
+
+                
+
 
