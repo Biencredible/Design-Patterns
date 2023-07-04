@@ -44,8 +44,6 @@ There are several options where this method could be placed. The most obvious pl
 container. ALternatively, you could create a new factory class. Or you could make the factory method 
 static and put it inside an actual flyweight class.
 
-
-
 # Components:
 ![image info](./structure.png)
 * The flyweight pattern is merely an optimization. Before applying it, make sure your program does 
@@ -72,10 +70,13 @@ existing one that matches search criteria or creates a new one if nothing is fou
 
 # Pros & Cons
 ## Pros:
-
-
+* You can save a lot of RAM, assuming the program has tons of similar objects.
 
 ## Cons:
+* You might be trading RAM over CPU cycles when some of the context data needs to be recalculated 
+each time somebody calls a flyweight method.
+* The code becomes much more complicated. New team members will always be wondering why the state of
+an entity was separated in such a way.
 
 
 
