@@ -78,8 +78,6 @@ each time somebody calls a flyweight method.
 * The code becomes much more complicated. New team members will always be wondering why the state of
 an entity was separated in such a way.
 
-
-
 # Applicability(When to use):
 * Use the Flyweight pattern only when your program must support a huge number of objexts which 
 barely fit into available RAM. 
@@ -88,8 +86,6 @@ when:
 - an application needs to spawn a huge number of similar objects.
 - this drains all available RAM on target device
 - the objects contain duplicate states which can be extracted and shared betwen multiple objects.
-
-
 
 # How to implement:
 * In most cases, the client does not create the flywieght itself.
@@ -120,7 +116,15 @@ referencing field may be moved to a separate context class.
 
  
 # Relations with other patterns
-
+* You can implement shared leaf nodes of **Composite** tree as **Flyweights** to save some RAM.
+* **Flyweight** shows how to make lots of little objects, wheras **Facade** shows how to make a 
+single object that represents an entire subsystem.
+* **Flyweight** would resemble **Singleton** if you somehow managed to reduce all shared states of 
+the object to hust one flyweight object. But there are two fundamental differences between these
+patterns:
+1. There should be only one *Singleton* instance, whereas *Flyweight* class can have multiple 
+instances with different intrinsic states.
+2. The *Singleton* object can be mutable. *Flyweight* objects are immutable.
 
 
 # Pseudocode Example
