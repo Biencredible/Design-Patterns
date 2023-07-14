@@ -52,8 +52,27 @@ of rebuilding them each time.
     database connections, file systems, and network resources.
     Let's think about what has to be done to reuse an existing object:
     1. First, you need to create some storage to keep track of the created objects.
+    2. When someone requests an object, the program should look for a free object inside that pool.
+    3. ... and then return it to the client pool.
+    4. If there are no free objects, the program should create a new one (and add it to the pool).
+
+    That's a lot of code! And it must all be put into a single place so that you don't pollute the 
+    program with duplicate code.
+    Probably the most obvious and convenient place where this code could be placed is the 
+    constructor of the class whose objects we're trying to reuse. However, a construtor must always
+    return new
 
 # How to implement:
+1. Make all products follow the same interface. This interface should declare methods that make
+sense in every prodct.
+2. Add an emoty factory method inside the creator class. The retur type of the mehod should match 
+the common product interface.
+3. In the creator's code find all references to product constructors. One by one, replace them with 
+calls to the factory method, while extracting the product creation code into the factory method.
+You might need to add atemporary parameter to the factory method to control the ttype of returned 
+product.
+At his point, the cpde pf the factory method may look pretty ugly. It may have a large *switch* 
+statement that picks which product class to isntantiate.
 
 
  
